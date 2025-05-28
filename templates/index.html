@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Diagnóstico</title>
+</head>
+<body>
+    <h1>Nuevo Diagnóstico Médico</h1>
+    <form method="post" action="/diagnostico/form">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" required><br>
+
+        <label>Tipo:</label>
+        <input type="text" name="tipo" required><br>
+
+        <label>Descripción:</label>
+        <input type="text" name="descripcion" required><br>
+
+        <label>Recomendaciones:</label>
+        <input type="text" name="recomendaciones"><br>
+
+        <label>Médico ID:</label>
+        <input type="number" name="medico_id"><br>
+
+        <label>Junta Médica ID:</label>
+        <input type="number" name="junta_medica_id"><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if resultado %}
+        <h2>Diagnóstico Registrado</h2>
+        <pre>{{ resultado }}</pre>
+    {% endif %}
+</body>
+</html>
