@@ -8,6 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # templates
 BASE_DIR = Path(__file__).resolve().parent
@@ -64,3 +65,5 @@ def crear_desde_formulario(
         "request": request,
         "resultado": datos
     })
+
+
